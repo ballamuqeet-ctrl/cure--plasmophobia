@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ghost Sentence 150,000x</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+      background: #111;
+      color: white;
+    }
+
+    button {
+      font-size: 20px;
+      padding: 15px 25px;
+      cursor: pointer;
+      border: none;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>👻 The Ghost Sentence</h1>
+  <p>150,000 copies. Absolutely free.</p>
+
+  <button onclick="downloadFile()">Download the 150,000x sentence</button>
+
+  <script>
+    function downloadFile() {
+      const sentence =
+        "Someone could be scared of ghosts even in a brightly lit room";
+
+      const text = sentence.repeat(150000);
+      const blob = new Blob([text], { type: "text/plain" });
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = "ghost-sentence-150000x.txt";
+      link.click();
+
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>
